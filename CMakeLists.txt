@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.8)
-project(ros2_cpp_template)
+﻿cmake_minimum_required(VERSION 3.8)
+project(la_iq4)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)

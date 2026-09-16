@@ -1,4 +1,4 @@
-from launch import LaunchDescription
+﻿from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
@@ -25,7 +25,7 @@ def generate_launch_description():
             ]
         ),
         # Node(
-        #     package='ros2_cpp_template',
+        #     package='la_iq4',
         #     executable='simple_sub_node',
         #     output='screen',
         # ),
