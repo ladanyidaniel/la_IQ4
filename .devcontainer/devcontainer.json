@@ -1,0 +1,15 @@
+{
+  "name": "ROS 2 Humble - la_iq4",
+  "image": "mcr.microsoft.com/devcontainers/ros:humble",
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-iot.vscode-ros"
+      ]
+    }
+  },
+  "postCreateCommand": "bash -lc 'source /opt/ros/humble/setup.bash && colcon build --symlink-install'"
+}
