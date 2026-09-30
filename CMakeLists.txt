@@ -11,24 +11,35 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
+find_package(rclpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(geometry_msgs REQUIRED)
+
 
 set(ament_dependencies
   rclcpp
   std_msgs
-  geometry_msgs
+  sensor_msgs
 )
 
 add_executable(test_node src/test_node.cpp)
 ament_target_dependencies(test_node ${ament_dependencies})
+
+
+add_executable(sensor_node src/sensor_node.cpp)
+ament_target_dependencies(sensor_node ${ament_dependencies})
+
+
+add_executable(monitor_node src/monitor_node.cpp)
+ament_target_dependencies(monitor_node ${ament_dependencies})
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
 
 install(TARGETS
   test_node
+  sensor_node
+  monitor_node
 DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
