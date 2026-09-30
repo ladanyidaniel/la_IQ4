@@ -16,6 +16,8 @@ public:
       "humidity",
       10,
       std::bind(&MonitorNode::check_humidity, this, std::placeholders::_1));
+
+    RCLCPP_INFO(get_logger(), "Monitor node elindult, várakozás...");
   }
 
 private:

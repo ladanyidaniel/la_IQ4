@@ -7,13 +7,19 @@ class SensorNode : public rclcpp::Node
 public:
   SensorNode() : Node("sensor_node")
   {
+    srand(now().nanoseconds());
+
     temp_pub_ = create_publisher<sensor_msgs::msg::Temperature>(
       "temperature", 10);
 
     humidity_pub_ = create_publisher<sensor_msgs::msg::RelativeHumidity>(
       "humidity", 10);
 
-    publish_data();
+    timer_ = create_wall_timer(
+      std::chrono::seconds(1),
+      std::bind(&SensorNode::publish_data, this));
+
+    RCLCPP_INFO(get_logger(), "Sensor node elindult, adatok közzététele...");
   }
 
 private:
@@ -39,6 +45,7 @@ private:
 
   rclcpp::Publisher<sensor_msgs::msg::Temperature>::SharedPtr temp_pub_;
   rclcpp::Publisher<sensor_msgs::msg::RelativeHumidity>::SharedPtr humidity_pub_;
+  rclcpp::TimerBase::SharedPtr timer_;
 };
 
 int main(int argc, char * argv[])
