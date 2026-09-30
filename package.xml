@@ -2,8 +2,8 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>la_iq4</name>
-  <version>0.0.6</version>
-  <description>Kis beadandó: Szimulált hőmérsékelt</description>
+  <version>1.0.0</version>
+  <description>Kis beadandó: Szimulált hőmérsékelt monitorozása</description>
   <maintainer email="gekox1111@gmail.com">Ladányi Dániel</maintainer>
   <license>GNU General Public License v3.0</license>
 
