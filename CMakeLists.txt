@@ -22,10 +22,6 @@ set(ament_dependencies
   sensor_msgs
 )
 
-add_executable(test_node src/test_node.cpp)
-ament_target_dependencies(test_node ${ament_dependencies})
-
-
 add_executable(sensor_node src/sensor_node.cpp)
 ament_target_dependencies(sensor_node ${ament_dependencies})
 
@@ -37,7 +33,6 @@ install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
 
 install(TARGETS
-  test_node
   sensor_node
   monitor_node
 DESTINATION lib/${PROJECT_NAME})
